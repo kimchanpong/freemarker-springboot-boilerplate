@@ -16,9 +16,9 @@ import javax.servlet.ServletContext;
 import java.io.IOException;
 
 @Configuration
-//@EnableWebMvc
+@EnableWebMvc
 @ComponentScan(
         basePackages = {
                 "com.ckdpharm"
         })
-public class WebMvcConfig implements WebMvcConfigurer { }
+public class WebMvcConfig { }
