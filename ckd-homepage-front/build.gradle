@@ -1,0 +1,16 @@
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+war {
+    enabled = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    compile project(':ckd-homepage-common')
+}

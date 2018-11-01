@@ -1,0 +1,8 @@
+.idea/
+ckd-homepage-common/.gradle/
+ckd-homepage-common/build/
+ckd-homepage-common/gradle/
+ckd-homepage-front/.gradle/
+ckd-homepage-front/build/
+ckd-homepage-front/gradle/
+ckd-homepage-front/out/

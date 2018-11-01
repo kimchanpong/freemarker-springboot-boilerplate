@@ -1,0 +1,15 @@
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-freemarker')
+}

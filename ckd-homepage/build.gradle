@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    group "com.ckdpharm.homepage"
+    version "1.0.0"
+
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "eclipse"
+    apply plugin: "eclipse-wtp"
+    apply plugin: "idea"
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.ckdpharm'
+    version = '1.0.0'
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter-aop')
+        compile('org.springframework.boot:spring-boot-starter-jooq')
+        compile('org.springframework.boot:spring-boot-devtools')
+        compile('mysql:mysql-connector-java')
+        compile('org.projectlombok:lombok')
+        compile('org.springframework.boot:spring-boot-starter-tomcat')
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+}
