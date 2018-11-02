@@ -8,14 +8,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 public class FrontHomepageApplication extends SpringBootServletInitializer {
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(FrontHomepageApplication.class);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(FrontHomepageApplication.class);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(FrontHomepageApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FrontHomepageApplication.class, args);
+    }
 }

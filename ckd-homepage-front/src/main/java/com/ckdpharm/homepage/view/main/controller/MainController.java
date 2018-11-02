@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	@GetMapping(value = "/main")
-	public ModelAndView main(ModuleAndView model) {
-		model.setTemplate("main/main");
-		return model.render();
-	}
+    @GetMapping(value = "/main")
+    public ModelAndView main(ModuleAndView model) {
+        model.setTemplate("main/main");
+        return model.render();
+    }
 }
