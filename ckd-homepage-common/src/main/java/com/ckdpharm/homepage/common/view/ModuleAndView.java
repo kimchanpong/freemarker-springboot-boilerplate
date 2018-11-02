@@ -8,7 +8,7 @@ public class ModuleAndView extends ModelAndView {
      */
 
     // 템플릿
-    private String template = "";
+    private String template;
 
     public ModuleAndView(String template) {
         this.template = template;
