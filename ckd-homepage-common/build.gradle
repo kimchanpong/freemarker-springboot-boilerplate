@@ -1,3 +1,17 @@
+apply plugin: 'nu.studer.jooq'
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath("nu.studer:gradle-jooq-plugin:3.0.2")
+        classpath("org.mariadb.jdbc:mariadb-java-client:2.2.5")
+    }
+}
+
 bootJar {
     enabled = false
 }
@@ -13,4 +27,42 @@ jar {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-freemarker')
+    jooqRuntime('org.mariadb.jdbc:mariadb-java-client:2.2.5')
+    compile('org.jooq:jooq:3.11.6')
+    compile('org.jooq:jooq-meta:3.11.6')
+    compile('org.jooq:jooq-codegen:3.11.6')
+}
+
+jooq {
+    sample(sourceSets.main) {
+        jdbc {
+            driver = 'org.mariadb.jdbc.Driver'
+            url = 'jdbc:mariadb://127.0.0.1:7128/jooqtest?useUnicode=true&characterEncoding=UTF8'
+            user = 'ray'
+            password = 'ray00'
+            schema = 'jooqtest'
+        }
+        generator {
+            name = 'org.jooq.codegen.DefaultGenerator'
+            strategy {
+                name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+            }
+            database {
+                name = 'org.jooq.meta.mariadb.MariaDBDatabase'
+                inputSchema = 'jooqtest'
+            }
+            generate {
+                daos = true
+                relations = true
+                deprecated = false
+                records = true
+                immutablePojos = true
+                fluentSetters = true
+            }
+            target {
+                packageName = 'com.ckdpharm.jooq.domain'
+                directory = 'src/main/java'
+            }
+        }
+    }
 }
