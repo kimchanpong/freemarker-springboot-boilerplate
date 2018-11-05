@@ -40,7 +40,6 @@ subprojects {
         compile('org.springframework.boot:spring-boot-starter-aop')
         compile('org.springframework.boot:spring-boot-starter-jooq')
         compile('org.springframework.boot:spring-boot-devtools')
-        compile('mysql:mysql-connector-java')
         compile('org.projectlombok:lombok')
         compile('org.springframework.boot:spring-boot-starter-tomcat')
         testCompile('org.springframework.boot:spring-boot-starter-test')
