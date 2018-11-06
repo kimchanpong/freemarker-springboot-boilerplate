@@ -27,10 +27,9 @@ jar {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-freemarker')
+    compile('org.mariadb.jdbc:mariadb-java-client:2.2.5')
     jooqRuntime('org.mariadb.jdbc:mariadb-java-client:2.2.5')
-    compile('org.jooq:jooq:3.11.6')
-    compile('org.jooq:jooq-meta:3.11.6')
-    compile('org.jooq:jooq-codegen:3.11.6')
+    compile('org.springframework.boot:spring-boot-starter-jooq')
 }
 
 jooq {
