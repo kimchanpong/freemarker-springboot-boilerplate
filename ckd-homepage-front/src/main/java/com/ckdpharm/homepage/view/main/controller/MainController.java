@@ -20,7 +20,7 @@ public class MainController {
     @GetMapping(value = "/main")
     public ModelAndView main(ModuleAndView model) {
         model.setTemplate("main/main");
-        model.addObject("list", mainService.selectMain());
+        model.addObject("list", mainService.selectList());
         return model.render();
     }
 }

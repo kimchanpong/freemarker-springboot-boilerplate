@@ -17,7 +17,7 @@ public class MainServiceImpl implements MainService {
     private MainDao mainDao;
 
     @Override
-    public List<MainVO> selectMain() {
-        return mainDao.selectMain();
+    public List<MainVO> selectList() {
+        return mainDao.selectList();
     }
 }
