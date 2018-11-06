@@ -23,7 +23,10 @@
         <#--</div>-->
     <#--</div>-->
 <#--</div>-->
-테스트<br/>
+<h1>List</h1>
 <#list list as item>
     ${item}
 </#list>
+<br/>
+<h1>Vo</h1>
+${vo}
