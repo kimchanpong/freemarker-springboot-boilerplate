@@ -46,4 +46,13 @@ public class MainDao extends BaseDao {
                 .execute()
                 ;
     }
+
+    public int deleteVo(MainPO po) {
+        /** update의 첫번째 인자는 무조건 테이블 domain이 와야한다 */
+        return dao
+                .deleteFrom(AUTHOR)
+                .where(AUTHOR.ID.eq(po.getId()))
+                .execute()
+                ;
+    }
 }

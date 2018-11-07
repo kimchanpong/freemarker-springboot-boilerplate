@@ -12,4 +12,5 @@ public interface MainService {
     public MainVO selectVo(MainSO so);
     public boolean insertVo(MainPO po);
     public boolean updateVo(MainPO po);
+    public boolean deleteVo(MainPO po);
 }

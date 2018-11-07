@@ -37,4 +37,9 @@ public class MainServiceImpl implements MainService {
     public boolean updateVo(MainPO po) {
         return mainDao.updateVo(po) > 0;
     }
+
+    @Override
+    public boolean deleteVo(MainPO po) {
+        return mainDao.deleteVo(po) > 0;
+    }
 }
