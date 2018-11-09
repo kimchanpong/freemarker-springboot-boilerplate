@@ -1,6 +1,5 @@
 package com.ckdpharm.homepage.view.main.controller;
 
-import com.ckdpharm.homepage.common.view.ModuleAndView;
 import com.ckdpharm.homepage.model.common.ResultListModel;
 import com.ckdpharm.homepage.model.common.ResultModel;
 import com.ckdpharm.homepage.model.main.MainPO;
@@ -23,9 +22,9 @@ public class MainController {
     private MainService mainService;
 
     @RequestMapping({"/", "/main"})
-    public ModelAndView main(ModuleAndView model) {
-        model.setTemplate("main/main");
-        return model.render();
+    public ModelAndView main(ModelAndView model) {
+        model.setViewName("main/main");
+        return model;
     }
 
     @GetMapping("/main")

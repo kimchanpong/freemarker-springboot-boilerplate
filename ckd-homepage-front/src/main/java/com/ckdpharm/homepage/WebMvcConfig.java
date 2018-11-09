@@ -1,5 +1,6 @@
 package com.ckdpharm.homepage;
 
+import com.ckdpharm.homepage.interceptor.ViewInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -25,9 +26,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(deviceResolverHandlerInterceptor());
-        registry.addInterceptor(sitePreferenceHandlerInterceptor());
-        registry.addInterceptor(siteSwitcherHandlerInterceptor());
+        registry.addInterceptor(deviceResolverHandlerInterceptor())
+                .order(0);
+        registry.addInterceptor(sitePreferenceHandlerInterceptor())
+                .order(1);
+        registry.addInterceptor(siteSwitcherHandlerInterceptor())
+                .order(2);
+        registry.addInterceptor(viewInterceptor())
+                .order(3);
     }
 
     @Bean
@@ -43,5 +49,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Bean
     public SiteSwitcherHandlerInterceptor siteSwitcherHandlerInterceptor() {
         return SiteSwitcherHandlerInterceptor.urlPath("/m", "/m", "/");
+    }
+
+    @Bean
+    public ViewInterceptor viewInterceptor() {
+        return new ViewInterceptor();
     }
 }
