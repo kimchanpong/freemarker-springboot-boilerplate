@@ -28,7 +28,7 @@ public class MainController {
         return model.render();
     }
 
-    @GetMapping("/main/json")
+    @GetMapping("/main")
     public @ResponseBody ResultListModel<MainVO> selectList() {
         List<MainVO> getList = mainService.selectList();
         ResultListModel<MainVO> result = new ResultListModel<>();
@@ -36,7 +36,7 @@ public class MainController {
         return result;
     }
 
-    @GetMapping("/main/json/{id}")
+    @GetMapping("/main/{id}")
     public @ResponseBody ResultModel<MainVO> select(@PathVariable Integer id) {
         MainSO so = new MainSO();
         so.setId(id);
