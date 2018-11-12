@@ -1,16 +1,23 @@
-debug: false
-
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: "jdbc:mariadb://127.0.0.1:7128/jooqtest?useUnicode=true&characterEncoding=UTF8"
     username: ray
     password: ray00
+
   jooq:
     sql-dialect: mariadb
 
-  devtoos:
-    livereload:
-      enabled: false
+  http:
+    log-request-details: true
+
+logging:
+  level:
+    web: debug
+
+
+#  devtoos:
+#    livereload:
+#      enabled: false
 
 # 프리마커 파일은 별도의 prefix, suffix 설정이 없어도 부트에서 자동으로 resources -> templates 폴더를 가리킨다.
