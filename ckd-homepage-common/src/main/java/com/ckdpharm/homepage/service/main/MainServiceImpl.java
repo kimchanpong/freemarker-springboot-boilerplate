@@ -1,6 +1,9 @@
 package com.ckdpharm.homepage.service.main;
 
+import com.ckdpharm.homepage.common.util.MessageUtil;
 import com.ckdpharm.homepage.dao.main.MainDao;
+import com.ckdpharm.homepage.model.common.ResultListModel;
+import com.ckdpharm.homepage.model.common.ResultModel;
 import com.ckdpharm.homepage.model.main.MainPO;
 import com.ckdpharm.homepage.model.main.MainSO;
 import com.ckdpharm.homepage.model.main.MainVO;
@@ -19,8 +22,28 @@ public class MainServiceImpl implements MainService {
     private MainDao mainDao;
 
     @Override
+    public ResultListModel<MainVO> selectListModel() {
+        ResultListModel<MainVO> result = new ResultListModel<MainVO>();
+        List<MainVO> selectList = this.selectList();
+        result.setResultList(selectList);
+        result.setSuccess(selectList == null ? false : true);
+        result.setMessage(MessageUtil.getMessage("common.processed"));
+        return result;
+    }
+
+    @Override
     public List<MainVO> selectList() {
         return mainDao.selectList();
+    }
+
+    @Override
+    public ResultModel<MainVO> selectVoModel(MainSO so) {
+        ResultModel<MainVO> result = new ResultModel<MainVO>();
+        MainVO selectVo = this.selectVo(so);
+        result.setData(selectVo);
+        result.setSuccess(selectVo == null ? false : true);
+        result.setMessage(MessageUtil.getMessage("common.processed"));
+        return result;
     }
 
     @Override

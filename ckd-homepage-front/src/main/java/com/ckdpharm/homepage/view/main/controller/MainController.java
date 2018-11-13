@@ -29,20 +29,14 @@ public class MainController {
 
     @GetMapping("/main")
     public @ResponseBody ResultListModel<MainVO> selectList() {
-        List<MainVO> getList = mainService.selectList();
-        ResultListModel<MainVO> result = new ResultListModel<>();
-        result.setResultList(getList);
-        return result;
+        return mainService.selectListModel();
     }
 
     @GetMapping("/main/{id}")
     public @ResponseBody ResultModel<MainVO> select(@PathVariable Integer id) {
         MainSO so = new MainSO();
         so.setId(id);
-        MainVO vo = mainService.selectVo(so);
-        ResultModel<MainVO> result = new ResultModel();
-        result.setData(vo);
-        return result;
+        return mainService.selectVoModel(so);
     }
 
     @PostMapping("/main")
