@@ -10,7 +10,9 @@ public class ViewInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         String devicePath = request.getRequestURI().startsWith("/m/") ? "mobile" : "pc";
-        modelAndView.setViewName(devicePath + "/modules/views/" + modelAndView.getViewName());
+        if(modelAndView != null) {
+            modelAndView.setViewName(devicePath + "/modules/views/" + modelAndView.getViewName());
+        }
         super.postHandle(request, response, handler, modelAndView);
     }
 }
