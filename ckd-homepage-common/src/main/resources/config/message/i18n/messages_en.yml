@@ -1,0 +1,18 @@
+# 비슷한 메시지는 공통 메시지를 사용해 주세요.
+# 메시지는 되도록 영문 내림차순으로, 업무는 한글 내림차순으로 등록해주세요.
+
+# 공통 메시지
+common:
+  deleted: Deleted.
+  modified: Modified.
+  saved: Saved.
+  registered: Registered.
+
+  confirm:
+    delete: Do you want to delete?
+    save: Do you want to save?
+    register: Do you want to register?
+
+  error: An error occurred during processing.
+
+  nodata: No data.

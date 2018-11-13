@@ -1,0 +1,8 @@
+# 비슷한 메시지는 공통 메시지를 사용해 주세요.
+# 메시지는 되도록 영문 내림차순으로, 업무는 한글 내림차순으로 등록해주세요.
+
+#공통 검증 메시지
+typeMismatch: "잘못된 데이터 타입입니다."
+
+#검증 어노테이션별 메시지
+net.bellins.storm.validation.constraints.NullOrLength.message : "빈 값이거나 최소 {min}자 이상, {max}자 이하여야합니다."
