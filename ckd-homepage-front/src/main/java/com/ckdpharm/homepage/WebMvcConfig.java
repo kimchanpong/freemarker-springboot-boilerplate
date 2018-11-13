@@ -23,6 +23,7 @@ public class WebMvcConfig extends AppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/common/**").addResourceLocations("classpath:/assets/common/");
         registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/pc/");
         registry.addResourceHandler("/m/assets/**").addResourceLocations("classpath:/assets/mobile/");
     }
